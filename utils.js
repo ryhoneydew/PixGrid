@@ -11,3 +11,10 @@ export const getGalleries = async endpoint => {
 export const photoUrlGenerator = (farmId, serverId, id, secret) =>
   // https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret +
   `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`;
+
+export const removeNodes = (length, parentNode) => {
+  while (length) {
+    parentNode.removeChild(parentNode.childNodes[0]);
+    length--;
+  }
+};
