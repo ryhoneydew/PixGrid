@@ -4,12 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ---watch",
     "start": "parcel -p 3000 index.html"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/__tests__/*.(test|spec).(js)"
+    ],
+    "moduleNameMapper": {
+      ".*css$": "<rootDir>/src/stub.css"
+    }
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-fetch": "^3.0.1",
     "parcel-bundler": "^1.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "jest-fetch-mock": "^2.1.1"
   }
 }
