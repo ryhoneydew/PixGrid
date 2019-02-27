@@ -27,22 +27,6 @@ const createCollection = async (url, parent) => {
 
   newPage.init();
 
-  // data.photos.photo.forEach((item, idx) => {
-  //   const farmId = item.farm;
-  //   const serverId = item.server;
-  //   const id = item.id;
-  //   const secret = item.secret;
-
-  //   const elem = document.createElement("div");
-  //   elem.className = "photo";
-  //   elem.setAttribute("id", `photo${idx}`);
-  //   const img = document.createElement("img");
-  //   const imgUrl = photoUrlGenerator(farmId, serverId, id, secret);
-  //   img.setAttribute("src", imgUrl);
-  //   elem.appendChild(img);
-
-  //   photosNode.appendChild(elem);
-  // });
   parent.appendChild(photosNode);
 };
 

@@ -39,6 +39,7 @@ export class Page {
     this.nextPage.bind(this);
     this.previousPage.bind(this);
     this.pickPage.bind(this);
+    this.checkButton.bind(this);
   }
 
   init() {
@@ -81,6 +82,7 @@ export class Page {
     const end = begin + this.numberPerPage;
     this.currPhotosList = this.photosList.slice(begin, end);
     this.createNodes();
+    this.checkButton();
   }
 
   createNodes() {
@@ -114,5 +116,15 @@ export class Page {
   pickPage(event) {
     this.currentPage = Number(event.target.innerText);
     this.loadList();
+  }
+
+  checkButton() {
+    const nextButton = document.getElementById("next");
+    const previousButton = document.getElementById("previous");
+    if (nextButton && previousButton) {
+      nextButton.disabled =
+        this.currentPage == this.totalPageNum ? true : false;
+      previousButton.disabled = this.currentPage === 1 ? true : false;
+    }
   }
 }
