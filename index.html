@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>PixGrid</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav-item">
-          <a href="#">About</a>
-        </div>
-        <div class="nav-item">
-          <a href="#">Features</a>
-        </div>
-        <div class="nav-item">
-          <a href="#">Careers</a>
-        </div>
-      </nav>
-      <div>
-        <button id="black-white">Black and white</button>
-        <button id="architecture">Architecture</button>
-        <button id="people-shots">Black and white</button>
-      </div>
-    </header>
+    <div class="flex-container">
+      <h1>Your Best Shot 2018</h1>
+    </div>
+    <div id="options">
+      <button id="black-white">Black and white</button>
+      <button id="architecture">Architecture</button>
+      <button id="people-shots">Black and white</button>
+    </div>
+
     <section id="photo-collection"></section>
+    <div id="myModal" class="modal">
+      <span class="close">×</span>
+      <img class="modal-content" id="popup" />
+      <div id="caption"></div>
+    </div>
     <div id="pagination"></div>
   </body>
 </html>

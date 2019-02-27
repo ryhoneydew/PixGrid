@@ -1,5 +1,5 @@
 import "babel-polyfill";
-import { removeListener } from "cluster";
+
 export const getGalleries = async endpoint => {
   try {
     const response = await fetch(endpoint);
@@ -12,17 +12,22 @@ export const getGalleries = async endpoint => {
 
 export const photoUrlGenerator = (farmId, serverId, id, secret) =>
   // https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret +
-  `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`;
+  `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}_b.jpg`;
 
 export const removeNodes = (length, parentNode) => {
-  console.log(parentNode);
-  console.log(length);
   while (length) {
     parentNode.removeChild(parentNode.childNodes[0]);
     length--;
   }
 };
 
+export const createModal = (modal, modalImg, captionText, info) => {
+  console.log("clciked");
+  modal.style.display = "block";
+  modalImg.src = info.imgUrl;
+  modalImg.alt = `${info.title}-photo`;
+  captionText.innerHTML = info.title;
+};
 export class Page {
   constructor(photosList, numberPerPage, photosNode) {
     this.photosNode = photosNode;
@@ -91,13 +96,32 @@ export class Page {
       const serverId = item.server;
       const id = item.id;
       const secret = item.secret;
+      const title = item.title;
 
       const elem = document.createElement("div");
-      elem.className = "photo";
       const img = document.createElement("img");
+      const text = document.createElement("p");
+
+      const modal = document.getElementById("myModal");
+      const span = document.getElementsByClassName("close")[0];
+      span.onclick = function() {
+        modal.style.display = "none";
+      };
+      const modalImg = document.getElementById("popup");
+      const captionText = document.getElementById("caption");
+
       const imgUrl = photoUrlGenerator(farmId, serverId, id, secret);
       img.setAttribute("src", imgUrl);
+      img.className = "thumb-img";
+      text.className = "thumb-text";
+      text.innerText = title;
+      img.addEventListener("click", () =>
+        createModal(modal, modalImg, captionText, { imgUrl, title })
+      );
+      elem.className = "thumb";
+      elem.classList.add("thumb-img");
       elem.appendChild(img);
+      elem.appendChild(text);
 
       this.photosNode.appendChild(elem);
     });

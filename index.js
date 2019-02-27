@@ -12,10 +12,14 @@ const architectureButton = document.getElementById("architecture");
 const peopleShotsButton = document.getElementById("people-shots");
 const paginations = document.getElementById("pagination");
 
+photoCollection.className = "flex-container";
+photosNode.className = "flex-container";
+photosNode.classList.add("photos-container");
+
 const createCollection = async (url, parent) => {
   const data = await getGalleries(url);
   const photos = data.photos.photo;
-  const photoNodeList = document.querySelectorAll(".photo");
+  const photoNodeList = document.querySelectorAll(".thumb");
   const pgList = document.querySelectorAll(".pg-number");
   let lengthOfPhotoNodes = photoNodeList.length;
   let lengthOfPgList = pgList.length;
@@ -39,3 +43,20 @@ architectureButton.addEventListener("click", () =>
 peopleShotsButton.addEventListener("click", () =>
   createCollection(peopleShotsUrl, photoCollection)
 );
+
+// // Get all images and insert the clicked image inside the modal
+// // Get the content of the image description and insert it inside the modal image caption
+// const images = document.getElementsByTagName('img');
+// const modalImg = document.getElementById("popup");
+// const captionText = document.getElementById("caption");
+
+// for (let i = 0; i < images.length; i++) {
+//    // register a load of callbacks:
+//    images[i].onclick = function(){
+//        // looks like can just write to the dom directly:
+//        modal.style.display = "block";
+//        modalImg.src = this.src;
+//        modalImg.alt = this.alt;
+//        captionText.innerHTML = this.nextElementSibling.innerHTML;
+//    }
+// }
