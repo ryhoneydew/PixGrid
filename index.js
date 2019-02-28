@@ -28,7 +28,7 @@ const createCollection = async (url, parent) => {
   removeNodes(lengthOfPgList, paginations);
 
   const newPage = new Page(photos, 10, photosNode);
-  console.log(newPage, "!!!!");
+
   newPage.init();
 
   parent.appendChild(photosNode);
