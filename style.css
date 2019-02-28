@@ -47,7 +47,6 @@ h1 {
   align-content: center;
   align-items: stretch;
   width: 70%;
-
   margin: 10px auto;
   resize: both;
 }
@@ -94,7 +93,6 @@ h1 {
   height: 100%;
   overflow: auto;
   color: black;
-  /* background-color: rgb(92, 91, 91); */
   background-color: rgba(148, 148, 148, 0.8);
   z-index: 999;
 }
@@ -186,14 +184,15 @@ button[disabled] {
 }
 
 /* Responsive Columns */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+@media only screen and (max-width: 700px) {
   .gallery {
     display: block;
     margin: 0.4em auto;
     width: 50vw;
   }
   .photos-container {
-    width: 50%;
+    width: 100%;
     margin: 6px 0;
   }
   .modal-content {
@@ -201,13 +200,15 @@ button[disabled] {
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
+  .thumb {
+    width: 100%;
+  }
   .photos-container {
-    display: block;
-    margin: 0.4em auto;
-    width: auto;
-    max-width: 100vw;
-    height: 100%;
+    width: 100%;
+    margin: 0.4em 0;
+    overflow: hidden;
+    padding: 0;
   }
   .gallery {
     display: block;
