@@ -95,7 +95,7 @@ h1 {
   overflow: auto;
   color: black;
   /* background-color: rgb(92, 91, 91); */
-  background-color: rgba(148, 148, 148, 0.7);
+  background-color: rgba(148, 148, 148, 0.8);
   z-index: 999;
 }
 
@@ -112,7 +112,7 @@ h1 {
   width: 80%;
   max-width: 700px;
   text-align: center;
-  color: #ccc;
+  color: black;
   padding: 10px 0;
   height: 150px;
 }
