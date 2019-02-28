@@ -4,7 +4,7 @@
 
 ## Getting started
 
-<h3>clone the project</h3>
+<h3>Clone the project</h3>
 
 ```
  git clone https://github.com/ryhoneydew/PixGrid.git
@@ -28,7 +28,7 @@ npm start
 http://localhost:3000/
 ```
 
-<h4>For testing</h3>
+<h3>For testing</h3>
 
 ```
 npm run test
