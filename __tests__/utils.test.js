@@ -1,5 +1,5 @@
 import { getGalleries, photoUrlGenerator, removeNodes, Page } from "../utils";
-import mockDom from "../mockDom";
+import mockDom from "../__mock__/mockDom";
 
 document.body.innerHTML = mockDom;
 
@@ -117,13 +117,16 @@ describe("class Page", () => {
       expect(newPage.currentPage).toBe(2);
     });
 
-    // test("Should disable previous or next button when necessary", () => {
-    //   //expect(previousButton.disabled).toBe(true);
-    //   console.log(newPage.currentPage);
-    //   expect(nextButton.disabled).toBe(false);
-    //   newPage.pickPage(newPage.totalPageNum);
-    //   //   expect(nextButton.disabled).toBe(false);
-    //   //   expect(previousButton.disabled).toBe(true);
-    // });
+    test("Should disable previous or next button when necessary", () => {
+      expect(previousButton.disabled).toBe(true);
+      expect(nextButton.disabled).toBe(false);
+
+      const mockEvent = { target: { innerText: "2" } };
+      newPage.pickPage(mockEvent);
+      newPage.checkButton();
+
+      expect(previousButton.disabled).toBe(false);
+      expect(nextButton.disabled).toBe(true);
+    });
   });
 });

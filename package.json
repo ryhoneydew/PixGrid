@@ -7,6 +7,14 @@
     "test": "jest ---watch --runInBand",
     "start": "parcel -p 3000 index.html"
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/__tests__/*.(test|spec).(js)"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

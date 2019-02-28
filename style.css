@@ -102,7 +102,6 @@ h1 {
 .modal-content {
   margin: auto;
   display: block;
-  /* width: 80vw; */
   max-width: 700px;
   max-height: 80vh;
 }
@@ -183,9 +182,9 @@ h1 {
 button:disabled,
 button[disabled] {
   border-color: #999999;
-  /* background-color: #cccccc; */
   color: #666666;
 }
+
 /* Responsive Columns */
 @media only screen and (max-width: 700px) {
   .gallery {
