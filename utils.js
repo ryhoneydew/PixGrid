@@ -50,6 +50,7 @@ export class Page {
     this.loadList();
     this.createPaginationButtons();
   }
+
   getNumberOfPages() {
     this.totalPageNum = Math.ceil(this.photosList.length / this.numberPerPage);
   }
