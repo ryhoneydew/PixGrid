@@ -7,6 +7,7 @@ html {
   font-family: "Work Sans", sans-serif;
   color: whitesmoke;
   line-height: 1.15;
+  text-align: center;
 }
 
 h1 {
@@ -17,14 +18,27 @@ h1 {
   display: flex;
   justify-content: center;
 }
+#photo-collection {
+  margin: 4em 0;
+}
+.gallery {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  background-color: transparent;
+  border: 0.1em solid whitesmoke;
+  color: whitesmoke;
+  margin: 0.8em 0.3em 0.8em 0.3em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 1.2em;
+}
 
-/* @media screen and (max-width: 600px) {
-  .flex-container {
-    flex-flow: column wrap;
-    align-items: center;
-    padding: 0 15px;
-  }
-} */
+.gallery:hover {
+  background: rgba(148, 148, 148);
+  cursor: pointer;
+}
 .photos-container {
   display: flex;
   flex-direction: row;
@@ -39,9 +53,12 @@ h1 {
 }
 .thumb {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-self: center;
   flex: 1 0 auto;
-  width: 500px;
+  width: 100%;
   height: auto;
   margin: 2px;
   text-decoration: none;
@@ -56,10 +73,12 @@ h1 {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
   transform: scale(1.2, 1.2);
   z-index: 100;
+  cursor: pointer;
 }
 
 .thumb-img,
 .thumb-text {
+  display: block;
   min-width: 60px;
   max-width: 300px;
 }
@@ -75,20 +94,19 @@ h1 {
   height: 100%;
   overflow: auto;
   color: black;
-  background-color: rgb(92, 91, 91);
-  /* background-color: rgba(148, 148, 148, 0.9); */
+  /* background-color: rgb(92, 91, 91); */
+  background-color: rgba(148, 148, 148, 0.7);
   z-index: 999;
 }
 
 .modal-content {
   margin: auto;
   display: block;
-  width: 80vw;
+  /* width: 80vw; */
   max-width: 700px;
   max-height: 80vh;
 }
 
-/* Caption of Modal Image */
 #caption {
   margin: auto;
   display: block;
@@ -126,7 +144,6 @@ h1 {
   }
 }
 
-/* The Close Button */
 .close {
   position: absolute;
   top: 15px;
@@ -144,8 +161,38 @@ h1 {
   cursor: pointer;
 }
 
+.pg-number {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  background-color: transparent;
+  border: 0.1em solid whitesmoke;
+  color: whitesmoke;
+  margin: 2em, 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 1.2em;
+}
+
+.pg-number:hover {
+  background: rgba(148, 148, 148);
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled] {
+  border-color: #999999;
+  /* background-color: #cccccc; */
+  color: #666666;
+}
 /* Responsive Columns */
 @media only screen and (max-width: 700px) {
+  .gallery {
+    display: block;
+    margin: 0.4em auto;
+    width: 50vw;
+  }
   .photos-container {
     width: 50%;
     margin: 6px 0;
@@ -157,6 +204,12 @@ h1 {
 
 @media only screen and (max-width: 500px) {
   .photos-container {
+    display: block;
+    margin: 0.4em auto;
     width: 100%;
+  }
+  .gallery {
+    display: block;
+    width: 80vw;
   }
 }

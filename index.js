@@ -28,11 +28,13 @@ const createCollection = async (url, parent) => {
   removeNodes(lengthOfPgList, paginations);
 
   const newPage = new Page(photos, 10, photosNode);
-
+  console.log(newPage, "!!!!");
   newPage.init();
 
   parent.appendChild(photosNode);
 };
+
+createCollection(peopleShotsUrl, photoCollection);
 
 blackWhiteButton.addEventListener("click", () =>
   createCollection(blackWhiteUrl, photoCollection)
@@ -43,20 +45,3 @@ architectureButton.addEventListener("click", () =>
 peopleShotsButton.addEventListener("click", () =>
   createCollection(peopleShotsUrl, photoCollection)
 );
-
-// // Get all images and insert the clicked image inside the modal
-// // Get the content of the image description and insert it inside the modal image caption
-// const images = document.getElementsByTagName('img');
-// const modalImg = document.getElementById("popup");
-// const captionText = document.getElementById("caption");
-
-// for (let i = 0; i < images.length; i++) {
-//    // register a load of callbacks:
-//    images[i].onclick = function(){
-//        // looks like can just write to the dom directly:
-//        modal.style.display = "block";
-//        modalImg.src = this.src;
-//        modalImg.alt = this.alt;
-//        captionText.innerHTML = this.nextElementSibling.innerHTML;
-//    }
-// }

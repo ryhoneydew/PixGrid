@@ -11,7 +11,6 @@ export const getGalleries = async endpoint => {
 };
 
 export const photoUrlGenerator = (farmId, serverId, id, secret) =>
-  // https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret +
   `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}_b.jpg`;
 
 export const removeNodes = (length, parentNode) => {
@@ -22,7 +21,6 @@ export const removeNodes = (length, parentNode) => {
 };
 
 export const createModal = (modal, modalImg, captionText, info) => {
-  console.log("clciked");
   modal.style.display = "block";
   modalImg.src = info.imgUrl;
   modalImg.alt = `${info.title}-photo`;
@@ -64,6 +62,7 @@ export class Page {
     previousButton.setAttribute("id", "previous");
     previousButton.className = "pg-number";
     previousButton.addEventListener("click", () => this.previousPage());
+    previousButton.disabled = true;
     paginationSection.appendChild(previousButton);
 
     for (let i = 1; i <= this.totalPageNum; i++) {
@@ -87,6 +86,7 @@ export class Page {
     const end = begin + this.numberPerPage;
     this.currPhotosList = this.photosList.slice(begin, end);
     this.createNodes();
+
     this.checkButton();
   }
 
@@ -145,10 +145,11 @@ export class Page {
   checkButton() {
     const nextButton = document.getElementById("next");
     const previousButton = document.getElementById("previous");
+
     if (nextButton && previousButton) {
       nextButton.disabled =
         this.currentPage == this.totalPageNum ? true : false;
-      previousButton.disabled = this.currentPage === 1 ? true : false;
+      previousButton.disabled = this.currentPage <= 1 ? true : false;
     }
   }
 }
