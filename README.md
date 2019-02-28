@@ -30,13 +30,13 @@ http://localhost:3000/
 
 <h4>For testing</h3>
 
-```sh
+```
 npm run test
 ```
 
 ## Feature
 
-1. Click the buttons on the top will render different collection.
-2. When hover over one photo, it will zoom in.
+1. Click the buttons at the top will render different collection.
+2. When hovering over one photo, it will zoom in.
 3. When clicking on an image it should display in a modal. You can close the modal by click the "X" button.
-4. When click the one of the pagination buttons, it will show a different page of photos
+4. When clicking one of the pagination buttons, it will show a different page of photos.
