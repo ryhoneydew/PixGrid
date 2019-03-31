@@ -1,6 +1,6 @@
 <h1>PixGrid</h1>
 
-<p>This project was using Flickr API, vanilla Javascript and CSS to build a photography website. </p>
+<p>A photography gallery with some of the best shots in 2018. The site was built with vanila Javascript, CSS, HTML, Parcel.js and Jest </p>
 
 ## Getting started
 
