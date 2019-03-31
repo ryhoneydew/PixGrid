@@ -1,6 +1,6 @@
 <h1>PixGrid</h1>
 
-<p>A photography gallery with some of the best shots in 2018. The site was built with vanila Javascript, CSS, HTML, Parcel.js and Jest </p>
+<p>A photo gallery with some of the best shots in 2018. The site was built with vanilla Javascript, CSS, HTML, Parcel.js, and Jest </p>
 
 ## Getting started
 
